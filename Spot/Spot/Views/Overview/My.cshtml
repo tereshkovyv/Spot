@@ -1,0 +1,15 @@
+﻿<h1>@ViewData["Title"]</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var socialObject in Model.socialObjects){
+            <div class="col-lg-4">
+                <img class="img-thumbnail" src="@socialObject.img"  alt="@socialObject.name"/>
+                <h3>@socialObject.name</h3>
+                @socialObject.presenter
+                @socialObject.shirtDescgription
+                <br/>
+                <button id="update-profile-button" type="submit" class="btn btn-primary">Подробнее</button>
+            </div>
+        }
+    }
+</div>

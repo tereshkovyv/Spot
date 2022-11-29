@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <UserSecretsId>aspnet-Spot-ACE9690F-A50A-45AB-A082-4CF903E3444D</UserSecretsId>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+        <None Include="wwwroot\img\1.jpg" />
+        <None Include="wwwroot\img\2.jfif" />
+        <None Include="wwwroot\img\3.jpeg" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.10" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.10" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\Home\Contacts.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Overview\All.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Overview\Favorite.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Overview\My.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\Error.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_Layout.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_LoginPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_NavbarPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewImports.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\_ViewStart.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\SocialObjectManager\Views\Overview\All.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\SocialObjectManager\Views\Overview\Favorite.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\SocialObjectManager\Views\Overview\My.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Areas\SocialObjectManager\Views\Overview\All.cshtml" />
+      <UpToDateCheckInput Remove="Areas\SocialObjectManager\Views\Overview\Favorite.cshtml" />
+      <UpToDateCheckInput Remove="Areas\SocialObjectManager\Views\Overview\My.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="IdentityExtentions" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Spot.DataLayer/1.0.0": {
+        "runtime": {
+          "Spot.DataLayer.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Spot.DataLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
