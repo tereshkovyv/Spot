@@ -66,10 +66,10 @@ namespace Spot.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl ??= Url.Content("~/");
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser {  };
+
                 var result = await _userManager.FindByIdAsync("1");
 
                     return LocalRedirect(returnUrl);

@@ -25,7 +25,7 @@ namespace Spot.Controllers
         {
             ViewBag.Title = "Все объекты";
             var veiwModel = new AllOverviewModel();
-            veiwModel.socialObjects = _allSocialObjects.SocialObjects;
+            veiwModel.socialObjects = _allSocialObjects.GetAllObjectsObjects;
             return View(veiwModel);
         }
         
@@ -34,7 +34,7 @@ namespace Spot.Controllers
             ViewBag.Title = "Избранные объекты";
             var veiwModel = new FavoriteOverviewModel
             {
-                socialObjects = _allSocialObjects.GetFavorite
+                socialObjects = _allSocialObjects.GetFavoriteObjects
             };
             return View(veiwModel);
         }
@@ -43,7 +43,7 @@ namespace Spot.Controllers
         {
             ViewBag.Title = "Мои объекты";
             var veiwModel = new MyOverviewModel();
-            veiwModel.socialObjects = _allSocialObjects.GetFavorite;
+            veiwModel.socialObjects = _allSocialObjects.GetFavoriteObjects;
             return View(veiwModel);
         }
     }

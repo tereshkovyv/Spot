@@ -5,8 +5,10 @@ namespace Spot.Data.Interfaces
 {
     public interface IAllSocialObjects
     {
-        IEnumerable<SocialObject> SocialObjects { get; }
+        IEnumerable<SocialObject> GetAllObjectsObjects { get; set; }
         
-        IEnumerable<SocialObject> GetFavorite { set; get; }
+        IEnumerable<SocialObject> GetFavoriteObjects { get; }
+        
+        IEnumerable<SocialObject> GetMySocialObjects { get; }
     }
 }

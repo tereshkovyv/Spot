@@ -7,7 +7,7 @@ namespace Spot.Data.Mocks
 {
     public class MockSocialObject : IAllSocialObjects
     {
-        public IEnumerable<SocialObject> SocialObjects
+        public IEnumerable<SocialObject> GetAllObjectsObjects
         {
             get
             {
@@ -39,12 +39,11 @@ namespace Spot.Data.Mocks
                     }
                 };
             }
+            set => throw new System.NotImplementedException();
         }
 
-        public IEnumerable<SocialObject> GetFavorite
-        {
-            get => SocialObjects.Take(2);
-            set{}
-        }
+
+        public IEnumerable<SocialObject> GetFavoriteObjects => GetAllObjectsObjects.Take(2); 
+        public IEnumerable<SocialObject> GetMySocialObjects => GetAllObjectsObjects.Take(2); 
     }
 }

@@ -2304,6 +2304,24 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Spot.DataLayer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Spot.DataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Spot.DataLayer.dll": {}
+        }
+      },
+      "Spot_DataLayer/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Spot_DataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Spot_DataLayer.dll": {}
+        }
       }
     }
   },
@@ -7801,6 +7819,16 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Spot.DataLayer/1.0.0": {
+      "type": "project",
+      "path": "../Spot.DataLayer/Spot.DataLayer.csproj",
+      "msbuildProject": "../Spot.DataLayer/Spot.DataLayer.csproj"
+    },
+    "Spot_DataLayer/1.0.0": {
+      "type": "project",
+      "path": "../Spot_DataLayer/Spot_DataLayer.csproj",
+      "msbuildProject": "../Spot_DataLayer/Spot_DataLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7811,7 +7839,9 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "Spot.DataLayer >= 1.0.0",
+      "Spot_DataLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7840,7 +7870,14 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Yuri\\RiderProjects\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Yuri\\RiderProjects\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj"
+            },
+            "C:\\Users\\Yuri\\RiderProjects\\Spot\\Spot_DataLayer\\Spot_DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Yuri\\RiderProjects\\Spot\\Spot_DataLayer\\Spot_DataLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
