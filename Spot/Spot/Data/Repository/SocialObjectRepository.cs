@@ -2,7 +2,6 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Spot.Data.Interfaces;
-using Spot.Data.Mocks;
 using Spot.Data.Models;
 
 namespace Spot.Data.Repository

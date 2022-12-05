@@ -150,29 +150,45 @@ namespace Spot.Data.Migrations
 
             modelBuilder.Entity("Spot.Data.Models.SocialObject", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("fullDescrtption")
+                    b.Property<DateTime>("Date")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("img")
+                    b.Property<string>("FullDescription")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("name")
+                    b.Property<string>("Name")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("presenter")
+                    b.Property<string>("OtherInformation")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("reciever")
+                    b.Property<string>("Place")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("shirtDescgription")
+                    b.Property<string>("PresenterId")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("id");
+                    b.Property<string>("ShirtDescription")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("SocialObject");
                 });
@@ -187,6 +203,9 @@ namespace Spot.Data.Migrations
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ContactPersonName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Email")
@@ -208,6 +227,18 @@ namespace Spot.Data.Migrations
 
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OrganisationName")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OrganisationType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OtherContacts")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("OtherInformation")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PasswordHash")
@@ -290,6 +321,24 @@ namespace Spot.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Spot.Data.Models.SocialObject", b =>
+                {
+                    b.HasOne("Spot.Data.Models.User", null)
+                        .WithMany("FavoriteObjects")
+                        .HasForeignKey("UserId");
+
+                    b.HasOne("Spot.Data.Models.User", null)
+                        .WithMany("OwnObjects")
+                        .HasForeignKey("UserId1");
+                });
+
+            modelBuilder.Entity("Spot.Data.Models.User", b =>
+                {
+                    b.Navigation("FavoriteObjects");
+
+                    b.Navigation("OwnObjects");
                 });
 #pragma warning restore 612, 618
         }

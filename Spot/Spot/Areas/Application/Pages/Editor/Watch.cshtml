@@ -1,0 +1,36 @@
+﻿@page
+@inject SignInManager<User> SignInManager
+@using Spot.Data.Models
+@model Spot.Areas.Application.Pages.Editor.Watch
+@{
+    ViewData["Title"] = Model.SocialObject.Name;
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="container my-5">
+    <div class="bg-light p-1 rounded">
+        <div class="col-sm-8 py-5 mx-auto">
+            <h3>@Model.SocialObject.Name</h3>
+            <p>@Model.SocialObject.Place</p>
+            <p>@Model.SocialObject.Date.ToString()</p>
+            <p>@Model.Presenter.OrganisationName</p>
+            <p>@Model.Presenter.ContactPersonName</p>
+            <p>@Model.Presenter.OtherContacts</p>
+            <P>@Model.SocialObject.ShirtDescription</p>
+            <p>@Model.SocialObject.FullDescription</p>
+            <p>@Model.SocialObject.Status</p>
+        </div>
+        @{ var user = Model._userManager.GetUserAsync(User).Result;}
+        @if (SignInManager.IsSignedIn(User) && user.OwnObjects.Count(x => x.Id == Model.SocialObject.Id) != 0)
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict["socialObjectId"] = Model.SocialObject.Id.ToString();
+            <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Edit" asp-all-route-data="dict">Редактировать</a>
+        }
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

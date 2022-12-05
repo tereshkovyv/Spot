@@ -1,19 +1,18 @@
-﻿namespace Spot.Data.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace Spot.Data.Models
 {
     public class SocialObject
     {
-        public int id { set; get; }
-        
-        public string name { set; get; }
-        
-        public string shirtDescgription{ set; get; }
-        
-        public string fullDescrtption { set; get; }
-        
-        public string presenter { set; get; }
-        
-        public string reciever { set; get; }
-        
-        public string img { set; get; }
+        public int Id { set; get; }
+        public string Name { set; get; }
+        public string Place { get; set; }
+        public DateTime Date { get; set; }
+        public string ShirtDescription{ set; get; }
+        public string FullDescription { set; get; }
+        public string PresenterId { set; get; }
+        public string Status { get; set; }
+        public string OtherInformation { get; set; }
     }
 }

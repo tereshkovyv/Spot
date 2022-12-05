@@ -81,28 +81,27 @@ namespace Spot.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                    code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
-                    var callbackUrl = Url.Page(
-                        "/Account/ConfirmEmail",
-                        pageHandler: null,
-                        values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
-                        protocol: Request.Scheme);
-
-                    await _emailSender.SendEmailAsync(Input.Email, "Spot: Подтверждение email.",
-                        $"Для подтверждения аккаунта перейдите по <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ссылке</a>.");
-
-                    _userManager.Options.SignIn.RequireConfirmedAccount = false;
-                    if (_userManager.Options.SignIn.RequireConfirmedAccount)
-                    {
-                        return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
-                    }
-                    else
-                    {
+                    // var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    // code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
+                    // var callbackUrl = Url.Page(
+                    //     "/Account/ConfirmEmail",
+                    //     pageHandler: null,
+                    //     values: new { area = "Identity", userId = user.Id, code = code, returnUrl = returnUrl },
+                    //     protocol: Request.Scheme);
+                    //
+                    // await _emailSender.SendEmailAsync(Input.Email, "Spot: Подтверждение email.",
+                    //     $"Для подтверждения аккаунта перейдите по <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>ссылке</a>.");
+                    //
+                    // if (_userManager.Options.SignIn.RequireConfirmedAccount)
+                    // {
+                    //     return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
+                    // }
+                    // else
+                    // {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToPage("Register2Step", new{user = user});
+                        return RedirectToPage("Register2Step", new{returnUrl = returnUrl, user = user});
                         //return LocalRedirect(returnUrl);
-                    }
+                    // }
                 }
                 foreach (var error in result.Errors)
                 {

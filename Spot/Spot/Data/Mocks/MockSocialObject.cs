@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿/*using System.Collections.Generic;
 using System.Linq;
 using Spot.Data.Interfaces;
 using Spot.Data.Models;
@@ -15,27 +15,27 @@ namespace Spot.Data.Mocks
                 {
                     new SocialObject()
                     {
-                        id = 1, name = "Игра по станциям на день космонавтики", presenter = "СПО 'Искорки'", img = "/img/1.jpg",
-                        fullDescrtption = "Тут где-то полное описание",
-                        shirtDescgription = "Игра по станциям на 1,5 часа для детей 10-15 лет",
+                        Id = 1, Name = "Игра по станциям на день космонавтики", Presenter = "СПО 'Искорки'",
+                        FullDescription = "Тут где-то полное описание",
+                        ShirtDescription = "Игра по станциям на 1,5 часа для детей 10-15 лет",
                     },
                     new SocialObject()
                     {
-                        id = 2, name = "Веселые старты", presenter = "СПО 'Sparks'", img = "/img/2.jfif",
-                        fullDescrtption = "Тут где-то полное описание",
-                        shirtDescgription = "Игра 'Веселые старты' на 1,5 часа для детей 6-9 лет"
+                        Id = 2, Name = "Веселые старты", Presenter = "СПО 'Sparks'",
+                        FullDescription = "Тут где-то полное описание",
+                        ShirtDescription = "Игра 'Веселые старты' на 1,5 часа для детей 6-9 лет"
                     },
                     new SocialObject()
                     {
-                    id = 2, name = "Мастер-класс по играм на знакомство", presenter = "СПО 'ИСКРА'", img = "/img/3.jpeg",
-                    fullDescrtption = "Тут где-то полное описание",
-                    shirtDescgription = "Мастер-класс по играм на знакомство на 1,5 часа для детей 6-15 лет"
+                    Id = 2, Name = "Мастер-класс по играм на знакомство", Presenter = "СПО 'ИСКРА'",
+                    FullDescription = "Тут где-то полное описание",
+                    ShirtDescription = "Мастер-класс по играм на знакомство на 1,5 часа для детей 6-15 лет"
                     },
                     new SocialObject()
                     {
-                        id = 2, name = "Мастер-класс по играм на знакомство", presenter = "СПО 'ИСКРА'", img = "/img/3.jpeg",
-                        fullDescrtption = "Тут где-то полное описание",
-                        shirtDescgription = "Просто копия предыдущей карточки "
+                        Id = 2, Name = "Мастер-класс по играм на знакомство", Presenter = "СПО 'ИСКРА'",
+                        FullDescription = "Тут где-то полное описание",
+                        ShirtDescription = "Просто копия предыдущей карточки "
                     }
                 };
             }
@@ -46,4 +46,4 @@ namespace Spot.Data.Mocks
         public IEnumerable<SocialObject> GetFavoriteObjects => GetAllObjectsObjects.Take(2); 
         public IEnumerable<SocialObject> GetMySocialObjects => GetAllObjectsObjects.Take(2); 
     }
-}
+}*/

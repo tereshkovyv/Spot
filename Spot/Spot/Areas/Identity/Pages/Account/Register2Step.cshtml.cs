@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using Humanizer;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,20 +14,21 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using Spot.Data.Models;
 
 namespace Spot.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class Register2StepModel : PageModel
     {
-        private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public Register2StepModel(
-            UserManager<IdentityUser> userManager,
-            SignInManager<IdentityUser> signInManager,
+            UserManager<User> userManager,
+            SignInManager<User> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -38,41 +40,60 @@ namespace Spot.Areas.Identity.Pages.Account
 
         [BindProperty]
         public InputModel Input { get; set; }
-
+        
         public string ReturnUrl { get; set; }
-
-        public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
         public class InputModel
         {
-            [Required]
-            [Display(Name = "Поле 1")]
-            public string Field1 { get; set; }
+
+            public User user { get; set; }
 
             [Required]
-            [Display(Name = "Поле 2")]
-            public string Field2 { get; set; }
+            [Display(Name = "Название организации")]
+            public string OrganisationName { get; set; }
+
+            [Required]
+            [Display(Name = "Тип организации")]
+            public string OrganisationType { get; set; }
             
-            [Display(Name = "Поле 3")]
-            public string Field3 { get; set; }
+            [Required]
+            [Display(Name = "Фамилия Имя представителя")]
+            public string ContactPersonName { get; set; }
+            
+            [Display(Name = "Телефон")]
+            public string Phone { get; set; }
+            
+            [Display(Name = "Другие контакты")]
+            public string OtherContacts { get; set; }
+            
+            [Display(Name = "Другая информация")]
+            public string OtherInformation { get; set; }
         }
 
-        public async Task OnGetAsync(string returnUrl = null)
+        public async Task OnGetAsync(string returnUrl)
         {
-            ReturnUrl = returnUrl;
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            var user = await _userManager.GetUserAsync(User);
+            Console.WriteLine("OnGet");
+            Console.WriteLine($"Сейчас : {user.Email}");
         }
 
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(string returnUrl)
         {
+            var user = await _userManager.GetUserAsync(User);
+            Console.WriteLine("OnPost");
+            Console.WriteLine($"Сайчас юзер: {user.Email}");
             returnUrl ??= Url.Content("~/");
-
+            //_user = _userManager.FindByIdAsync(userId).Result;
+            //inf = _user.Email;
             if (ModelState.IsValid)
             {
-
-                var result = await _userManager.FindByIdAsync("1");
-
-                    return LocalRedirect(returnUrl);
+                user.OrganisationName = Input.OrganisationName;
+                user.OrganisationType = Input.OrganisationType;
+                user.ContactPersonName = Input.ContactPersonName;
+                user.OtherContacts = Input.OtherContacts;
+                user.OtherInformation = Input.OtherInformation;
+                await _userManager.UpdateAsync(user);
+                return LocalRedirect(returnUrl);
             }
 
             // If we got this far, something failed, redisplay form

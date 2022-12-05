@@ -38,6 +38,10 @@
       <_ContentIncludedByDefault Remove="Areas\SocialObjectManager\Views\Overview\All.cshtml" />
       <_ContentIncludedByDefault Remove="Areas\SocialObjectManager\Views\Overview\Favorite.cshtml" />
       <_ContentIncludedByDefault Remove="Areas\SocialObjectManager\Views\Overview\My.cshtml" />
+      <_ContentIncludedByDefault Remove="Pages\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\AAAAFolder\TT.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Identity\Pages\AAAAFolder\Watch.cshtml" />
+      <_ContentIncludedByDefault Remove="Areas\Application\_ValidationScriptsPartial.cshtml" />
     </ItemGroup>
 
     <ItemGroup>

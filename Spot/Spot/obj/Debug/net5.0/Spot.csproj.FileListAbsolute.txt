@@ -1,7 +1,6 @@
 C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\appsettings.json
 C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\Spot.StaticWebAssets.xml
-C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\app.db
 C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\Spot.exe
 C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\Spot.deps.json
 C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\Spot.runtimeconfig.json
@@ -191,3 +190,10 @@ C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Identity\Page
 C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Views\Overview\All.cshtml.g.cs
 C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Views\Overview\Favorite.cshtml.g.cs
 C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Views\Overview\My.cshtml.g.cs
+C:\Users\Yuri\RiderProjects\Spot\Spot\bin\Debug\net5.0\app.db
+C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Application\Pages\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Application\Pages\_ViewImports.cshtml.g.cs
+C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Application\Pages\_ViewStart.cshtml.g.cs
+C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Application\Pages\Editor\Edit.cshtml.g.cs
+C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Application\Pages\Editor\Watch.cshtml.g.cs
+C:\Users\Yuri\RiderProjects\Spot\Spot\obj\Debug\net5.0\Razor\Areas\Application\Pages\Overview\All.cshtml.g.cs

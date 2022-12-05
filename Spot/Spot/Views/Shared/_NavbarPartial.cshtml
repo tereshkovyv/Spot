@@ -23,6 +23,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Overview" asp-action="My">Мои мероприятия</a>
                         </li>
+                        @if (UserManager.GetUserAsync(User).Result.OrganisationType == "School")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Edit" >+Создать</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial"/>
                 </div>
