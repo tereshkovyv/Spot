@@ -14,7 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Spot.Data;
 using Spot.Data.Interfaces;
 using Spot.Data.Models;
-using Spot.Data.Repository;
+using Spot.Data.Services;
 
 namespace Spot
 {
@@ -30,7 +30,7 @@ namespace Spot
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IAllSocialObjects, SocialObjectRepository>();
+            services.AddTransient<ISocialObjectManager, SocialObjectManager>();
             
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(

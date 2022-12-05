@@ -48,11 +48,9 @@
       <UpToDateCheckInput Remove="Areas\SocialObjectManager\Views\Overview\All.cshtml" />
       <UpToDateCheckInput Remove="Areas\SocialObjectManager\Views\Overview\Favorite.cshtml" />
       <UpToDateCheckInput Remove="Areas\SocialObjectManager\Views\Overview\My.cshtml" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\Spot.DataLayer\Spot.DataLayer.csproj" />
-      <ProjectReference Include="..\Spot_DataLayer\Spot_DataLayer.csproj" />
+      <UpToDateCheckInput Remove="Views\Overview\All.cshtml" />
+      <UpToDateCheckInput Remove="Views\Overview\Favorite.cshtml" />
+      <UpToDateCheckInput Remove="Views\Overview\My.cshtml" />
     </ItemGroup>
 
 </Project>

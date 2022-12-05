@@ -11,18 +11,16 @@ using Spot.Data.Models;
 
 namespace Spot.Areas.Application.Pages.Editor
 {
-    public class Edit : PageModel
+    public class Create : PageModel
     {
         public ISocialObjectManager _socialObjectManager { get; set; }
         public ApplicationDbContext _dbContext { get; set; }
         public UserManager<User> _userManager { get; set; }
 
-
-        public Edit(ApplicationDbContext applicationDbContext, UserManager<User> userManager,
-         ISocialObjectManager socialObjectManager)
+        public Create(ApplicationDbContext applicationDbContext, UserManager<User> userManager,
+           ISocialObjectManager socialObjectManager)
         {
             _socialObjectManager = socialObjectManager;
-
             _userManager = userManager;
             _dbContext = applicationDbContext;
         }
@@ -49,17 +47,12 @@ namespace Spot.Areas.Application.Pages.Editor
             }
         }
 
-        public async Task OnGetAsync(string socialObjectId)
+        public async Task OnGetAsync()
         {
-            if (socialObjectId is null)
-                SocialObject = new SocialObject();
-            else
-                SocialObject = _socialObjectManager.All
-                    .FirstOrDefault(x => x.Id == Convert.ToInt32(socialObjectId));
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            SocialObject = _socialObjectManager.GetById(Input.Id);
+            SocialObject = new SocialObject();
             SocialObject.Name = Input.Name;
             SocialObject.Place = Input.Place;
             SocialObject.Date = Input.Date;

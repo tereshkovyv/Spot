@@ -11,19 +11,19 @@ namespace Spot.Areas.Application.Pages.Editor
     public class Watch : PageModel
     {
         private ApplicationDbContext _applicationDbContext;
-        private IAllSocialObjects _allSocialObjects;
+        private ISocialObjectManager _socialObjectManager;
         public UserManager<User> _userManager;
-        public Watch(ApplicationDbContext applicationDbContext, IAllSocialObjects allSocialObjects, UserManager<User> userManager)
+        public Watch(ApplicationDbContext applicationDbContext,UserManager<User> userManager, ISocialObjectManager socialObjectManager)
         {
             _userManager = userManager;
-            _allSocialObjects = allSocialObjects;
+            _socialObjectManager = socialObjectManager;
             _applicationDbContext = applicationDbContext;
         }
         public SocialObject SocialObject;
         public User Presenter;
         public async void OnGet(string socialObjectId)
         {
-            SocialObject = _allSocialObjects.GetAllObjectsObjects
+            SocialObject = _socialObjectManager.All
                 .FirstOrDefault(x => x.Id == Convert.ToInt32(socialObjectId));
             Presenter = _userManager.FindByIdAsync(SocialObject.PresenterId).Result;
         }

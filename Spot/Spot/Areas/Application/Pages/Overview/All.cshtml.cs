@@ -1,21 +1,22 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Spot.Data;
+using Spot.Data.Interfaces;
 using Spot.Data.Models;
 
 namespace Spot.Areas.Application.Pages.Overview
 {
     public class All : PageModel
     {
-        private ApplicationDbContext _applicationDbContext;
-        public All(ApplicationDbContext applicationDbContext)
+        public ISocialObjectManager _socialObjectManager { get; }
+
+        public All(ISocialObjectManager socialObjectManager)
         {
-            _applicationDbContext = applicationDbContext;
+            _socialObjectManager = socialObjectManager;
         }
         public IEnumerable<SocialObject> socialObjects { get; set; }
-        public async void OnGetAsync()
+        public void OnGet()
         {
-            socialObjects = _applicationDbContext.SocialObject;
+            socialObjects = _socialObjectManager.All;
         }
-    }
+}
 }
