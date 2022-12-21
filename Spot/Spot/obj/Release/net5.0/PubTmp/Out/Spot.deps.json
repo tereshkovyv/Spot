@@ -41,7 +41,6 @@
           "Microsoft.EntityFrameworkCore.Tools": "5.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "5.0.2",
           "Spot.DataLayer": "1.0.0",
-          "Spot_DataLayer": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -2121,6 +2120,18 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Spot.DataLayer/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
+          "Microsoft.Extensions.Identity.Stores": "5.0.10"
+        },
+        "runtime": {
+          "Spot.DataLayer.dll": {}
+        },
+        "compile": {
+          "Spot.DataLayer.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Antiforgery.dll": {}
@@ -3776,12 +3787,6 @@
           "WindowsBase.dll": {}
         },
         "compileOnly": true
-      },
-      "Spot.DataLayer/1.0.0": {
-        "compileOnly": true
-      },
-      "Spot_DataLayer/1.0.0": {
-        "compileOnly": true
       }
     }
   },
@@ -4784,6 +4789,11 @@
       "sha512": "sha512-MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
+    },
+    "Spot.DataLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/5.0.0.0": {
       "type": "referenceassembly",
@@ -6162,16 +6172,6 @@
     },
     "WindowsBase/4.0.0.0": {
       "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Spot.DataLayer/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Spot_DataLayer/1.0.0": {
-      "type": "project",
       "serviceable": false,
       "sha512": ""
     }

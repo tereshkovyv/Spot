@@ -1,32 +1,38 @@
 ﻿@page
+@inject UserManager<User> UserManager
+
+@using Spot.DataLayer.Models
 @model Spot.Areas.Application.Pages.Overview.All
 @{ ViewData["Title"] = "";}
 
 <h1>@ViewData["Title"]</h1>
 <div class="row mt-5 mb-2">
     @{
-        foreach (var socialObject in Model.socialObjects){
-            @*<div class="col-lg-4">
-                $1$ <img class="img-thumbnail" src="@socialObject.img"  alt="@socialObject.Name"/> #1#
-                <h3>@socialObject.Name</h3>
-                @socialObject.Presenter
-                @socialObject.ShirtDescription
-                <br/>
-                <button id="update-profile-button" type="submit" class="btn btn-primary">Подробнее</button>
-            </div>*@
-            Dictionary<string, string> dict = new Dictionary<string, string>();
-            dict["socialObjectId"] = socialObject.Id.ToString();
-            <div class="p-1 mb-4 bg-light rounded-3 w-100 border rounded">
-                <div class="container-fluid">
-                    <h3 class="display-5 fw-bold">@socialObject.Name</h3>
-                    <p>@socialObject.ShirtDescription</p>
-                    @*<p><strong>@socialObject.Presenter</strong></p>*@
-                    <p>Статус: @socialObject.Status</p>
-                    <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Watch" asp-all-route-data="dict">Подробнее</a>
+        var socialObjects = Model.socialObjects;
+        foreach (var socialObject in Model.socialObjects)
+            {
+                Dictionary<string, string> dict = new Dictionary<string, string>();
+                dict["socialObjectId"] = socialObject.Id.ToString();
+
+                var presenter = Model.UserManager.FindByIdAsync(socialObject.PresenterId).Result;
+
+                <div class="p-1 mb-4 bg-light rounded-3 w-100 border rounded">
+                    <div class="container-fluid">
+                        <h3 class="display-5 fw-bold">@socialObject.Name</h3>
+                        <p><strong>@socialObject.Date.ToString("dd.MM HH:mm") - через @((socialObject.Date - DateTime.Now).ToString("dd")) дней</strong></p>
+                        <p>@socialObject.ShirtDescription</p>
+                        <p><strong>Предоставил:</strong> @presenter.OrganisationName</p>
+                        <p><strong>Статус:</strong> @socialObject.Status</p>
+                        <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Watch" asp-all-route-data="dict">Подробнее</a>
+                        <form action="" method="post">
+                            <input hidden="hidden" name="id" id="id" value="@socialObject.Id"/>
+                            <button type="submit">В избранное</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            }
         }
     }
 </div>
 
-@*Data Transfer Object *@
+

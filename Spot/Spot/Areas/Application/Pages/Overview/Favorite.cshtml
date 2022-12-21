@@ -1,19 +1,32 @@
 ﻿@page
 @model Spot.Areas.Application.Pages.Overview.Favorite
+@{ ViewData["Title"] = "";}
 
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div>
-    
+<h1>@ViewData["Title"]</h1>
+<div class="row mt-5 mb-2">
+    @{
+        foreach (var socialObject in Model.socialObjects){
+            @*<div class="col-lg-4">
+                $1$ <img class="img-thumbnail" src="@socialObject.img"  alt="@socialObject.Name"/> #1#
+                <h3>@socialObject.Name</h3>
+                @socialObject.Presenter
+                @socialObject.ShirtDescription
+                <br/>
+                <button id="update-profile-button" type="submit" class="btn btn-primary">Подробнее</button>
+            </div>*@
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict["socialObjectId"] = socialObject.Id.ToString();
+            <div class="p-1 mb-4 bg-light rounded-3 w-100 border rounded">
+                <div class="container-fluid">
+                    <h3 class="display-5 fw-bold">@socialObject.Name</h3>
+                    <p>@socialObject.ShirtDescription</p>
+                    @*<p><strong>@socialObject.Presenter</strong></p>*@
+                    <p>Статус: @socialObject.Status</p>
+                    <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Watch" asp-all-route-data="dict">Подробнее</a>
+                </div>
+            </div>
+        }
+    }
 </div>
-</body>
-</html>
+
+@*Data Transfer Object *@

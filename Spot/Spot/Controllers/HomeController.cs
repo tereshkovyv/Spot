@@ -15,6 +15,7 @@ namespace Spot.Controllers
 
         public HomeController(ILogger<HomeController> logger)
         {
+            Console.WriteLine("Controller created");
             _logger = logger;
         }
 

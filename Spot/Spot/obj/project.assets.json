@@ -2304,6 +2304,20 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "Spot.DataLayer/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "5.0.10",
+          "Microsoft.Extensions.Identity.Stores": "5.0.10"
+        },
+        "compile": {
+          "bin/placeholder/Spot.DataLayer.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Spot.DataLayer.dll": {}
+        }
       }
     }
   },
@@ -7801,6 +7815,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "Spot.DataLayer/1.0.0": {
+      "type": "project",
+      "path": "../Spot.DataLayer/Spot.DataLayer.csproj",
+      "msbuildProject": "../Spot.DataLayer/Spot.DataLayer.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7811,7 +7830,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.17",
       "Microsoft.EntityFrameworkCore.Sqlite >= 5.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.10",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "Spot.DataLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7820,11 +7840,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot\\Spot.csproj",
+      "projectUniqueName": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot\\Spot.csproj",
       "projectName": "Spot",
-      "projectPath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot\\Spot.csproj",
+      "projectPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot\\Spot.csproj",
       "packagesPath": "C:\\Users\\Yuri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot\\obj\\",
+      "outputPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yuri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7840,7 +7860,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

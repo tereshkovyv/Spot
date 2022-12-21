@@ -1,6 +1,6 @@
 ﻿@page
 @inject SignInManager<User> SignInManager
-@using Spot.Data.Models
+@using Spot.DataLayer.Models
 @model Spot.Areas.Application.Pages.Editor.Watch
 @{
     ViewData["Title"] = Model.SocialObject.Name;
@@ -20,7 +20,7 @@
             <p>@Model.SocialObject.FullDescription</p>
             <p>@Model.SocialObject.Status</p>
         </div>
-        @{ var user = Model._userManager.GetUserAsync(User).Result;}
+        @{ var user = Model.UserManager.GetUserAsync(User).Result;}
         @if (SignInManager.IsSignedIn(User) && user.OwnObjects.Count(x => x.Id == Model.SocialObject.Id) != 0)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();

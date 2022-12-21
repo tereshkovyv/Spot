@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Spot.Data.Models;
+using Spot.DataLayer.Models;
 
 namespace Spot.Areas.Identity.Pages.Account
 {
@@ -48,10 +48,11 @@ namespace Spot.Areas.Identity.Pages.Account
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "Пароль")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Запомнить")]
             public bool RememberMe { get; set; }
         }
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
-  <parameter name="IIS Web Application Name" description="" value="u1854327.isp.regruhosting.ru" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Yuri\\RiderProjects\\Spot\\Spot\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
+  <parameter name="IIS Web Application Name" description="" value="flizzzzzard-001-site1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot\\obj\\Release\\net5\.0\\PubTmp\\Out\\$" />
   </parameter>
 </parameters>

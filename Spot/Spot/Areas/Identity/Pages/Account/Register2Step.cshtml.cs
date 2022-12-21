@@ -14,7 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using Spot.Data.Models;
+using Spot.DataLayer.Models;
 
 namespace Spot.Areas.Identity.Pages.Account
 {

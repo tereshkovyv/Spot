@@ -6,7 +6,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
         <None Include="wwwroot\img\1.jpg" />
         <None Include="wwwroot\img\2.jfif" />
         <None Include="wwwroot\img\3.jpeg" />
@@ -51,6 +50,10 @@
       <UpToDateCheckInput Remove="Views\Overview\All.cshtml" />
       <UpToDateCheckInput Remove="Views\Overview\Favorite.cshtml" />
       <UpToDateCheckInput Remove="Views\Overview\My.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Spot.DataLayer\Spot.DataLayer.csproj" />
     </ItemGroup>
 
 </Project>

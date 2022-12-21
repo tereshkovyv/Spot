@@ -5,26 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Spot.Data;
-using Spot.Data.Interfaces;
-using Spot.Data.Models;
+using Spot.DataLayer;
+using Spot.DataLayer.Interfaces;
+using Spot.DataLayer.Models;
 
 namespace Spot.Areas.Application.Pages.Editor
 {
     public class Edit : PageModel
     {
-        public ISocialObjectManager _socialObjectManager { get; set; }
-        public ApplicationDbContext _dbContext { get; set; }
+        public IGettable<SocialObject> GettableSocialObjectRepository { get; set; }
+        public IAddable<SocialObject> AddableSocialObjectRepository { get; }
         public UserManager<User> _userManager { get; set; }
 
 
         public Edit(ApplicationDbContext applicationDbContext, UserManager<User> userManager,
-         ISocialObjectManager socialObjectManager)
+         IGettable<SocialObject> gettableSocialObjectRepository, IAddable<SocialObject> addableSocialObjectRepository)
         {
-            _socialObjectManager = socialObjectManager;
+            GettableSocialObjectRepository = gettableSocialObjectRepository;
+            AddableSocialObjectRepository = addableSocialObjectRepository;
 
             _userManager = userManager;
-            _dbContext = applicationDbContext;
         }
 
         [BindProperty]
@@ -42,11 +42,6 @@ namespace Spot.Areas.Application.Pages.Editor
             [Display(Name = "Время")] public DateTime Time { get; set; }
             [Display(Name = "Короткое описание")] public string ShirtDescription { get; set; }
             [Display(Name = "Полное описание")] public string FullDescription { get; set; }
-
-            public InputModel()
-            {
-                Console.WriteLine("InputModelCreated");
-            }
         }
 
         public async Task OnGetAsync(string socialObjectId)
@@ -54,12 +49,12 @@ namespace Spot.Areas.Application.Pages.Editor
             if (socialObjectId is null)
                 SocialObject = new SocialObject();
             else
-                SocialObject = _socialObjectManager.All
+                SocialObject = GettableSocialObjectRepository.All
                     .FirstOrDefault(x => x.Id == Convert.ToInt32(socialObjectId));
         }
         public async Task<IActionResult> OnPostAsync()
         {
-            SocialObject = _socialObjectManager.GetById(Input.Id);
+            SocialObject = GettableSocialObjectRepository.GetByIdOrNull(Input.Id);
             SocialObject.Name = Input.Name;
             SocialObject.Place = Input.Place;
             SocialObject.Date = Input.Date;
@@ -70,8 +65,7 @@ namespace Spot.Areas.Application.Pages.Editor
             SocialObject.PresenterId = user.Id;
             
             user.OwnObjects.Add(SocialObject);
-            _dbContext.Add(SocialObject);
-            _dbContext.SaveChanges();
+            AddableSocialObjectRepository.Add(SocialObject);
             return RedirectToPage();
         }
     }

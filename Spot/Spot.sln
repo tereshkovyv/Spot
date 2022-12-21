@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spot", "Spot\Spot.csproj", "{DDAEE978-BE15-4867-A091-A3DCF4C98BB8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spot.DataLayer", "Spot.DataLayer\Spot.DataLayer.csproj", "{14DAFD95-BB9D-42A0-9588-7C7623CBB83A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{DDAEE978-BE15-4867-A091-A3DCF4C98BB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDAEE978-BE15-4867-A091-A3DCF4C98BB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDAEE978-BE15-4867-A091-A3DCF4C98BB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14DAFD95-BB9D-42A0-9588-7C7623CBB83A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14DAFD95-BB9D-42A0-9588-7C7623CBB83A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14DAFD95-BB9D-42A0-9588-7C7623CBB83A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14DAFD95-BB9D-42A0-9588-7C7623CBB83A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

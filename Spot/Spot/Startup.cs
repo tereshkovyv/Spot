@@ -11,10 +11,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Spot.Data;
-using Spot.Data.Interfaces;
-using Spot.Data.Models;
-using Spot.Data.Services;
+using Spot.DataLayer;
+using Spot.DataLayer.Interfaces;
+using Spot.DataLayer.Models;
+using Spot.DataLayer.Repositories;
+using Spot.DataLayer;
 
 namespace Spot
 {
@@ -30,8 +31,10 @@ namespace Spot
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<ISocialObjectManager, SocialObjectManager>();
-            
+            //services.AddTransient<IGettable<SocialObject>, SocialObjectRepository>();
+                //services.AddTransient<IAddable<SocialObject>, SocialObjectRepository>();
+            services.AddTransient<ISocialObjectRepository, SocialObjectRepository>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
