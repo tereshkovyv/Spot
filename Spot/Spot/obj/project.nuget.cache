@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vwKNc9u0GcyhWW4HQ+hPGkh7ghX5FR3+vknxCDOERG53MkGSjI/BH3UR8aHy0pCa+JXm+diytZJDyJglVBMZpA==",
+  "dgSpecHash": "kjNYgKNy1u0U8RGWtp3bk5AV1GFvriIqyYmZE4/8cNPKqqwevJm3WVaaJGMruyKRIasVRz+XDesx0vBkSnaRpw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot\\Spot.csproj",
+  "projectFilePath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot\\Spot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yuri\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Yuri\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.0\\microsoft.aspnetcore.authentication.google.5.0.0.nupkg.sha512",

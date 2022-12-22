@@ -16,7 +16,6 @@ using Spot.Data.Models;
 using Spot.DataLayer.Interfaces;
 using Spot.DataLayer.Models;
 using Spot.DataLayer.Repositories;
-using Spot.DataLayer.Services;
 
 namespace Spot
 {

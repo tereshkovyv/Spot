@@ -775,11 +775,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
       "projectName": "Spot.DataLayer",
-      "projectPath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
+      "projectPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
       "packagesPath": "C:\\Users\\Yuri\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\obj\\",
+      "outputPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yuri\\AppData\\Roaming\\NuGet\\NuGet.Config",
