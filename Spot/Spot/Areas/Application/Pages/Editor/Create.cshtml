@@ -27,32 +27,10 @@
                 <label asp-for="Input.FullDescription"></label>
                 <textarea asp-for="Input.FullDescription" class="form-control"></textarea>
                 <button type="submit" class="btn btn-primary">Опубликовать</button>
-                
             </form>
         </div>
-        <button class="mybutton">Кнопочка</button>
     </div>
 </div>
-<script>
-//fetch
-//babel
-//webpack
-
-//typescript
-//прототипв в js
-// xhr
-const axios = require('axios');
-function add_to_favorite(){
-    axios.post('/Service/AddToFavorite', {}).then((response) => console.info(response));
-    }
-console.log("started");
-const x = document.getElementsByClassName("mybutton")[0];
-x.addEventListener("click", () => {
-    console.log('pressed');
-    add_to_favorite();
-});
-</script>
-
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

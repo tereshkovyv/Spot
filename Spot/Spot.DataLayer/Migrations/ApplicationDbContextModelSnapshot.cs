@@ -3,9 +3,9 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Spot.DataLayer;
+using Spot.Data;
 
-namespace Spot.DataLayer.Migrations
+namespace Spot.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -148,7 +148,7 @@ namespace Spot.DataLayer.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Spot.DataLayer.Models.SocialObject", b =>
+            modelBuilder.Entity("Spot.Data.Models.SocialObject", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -193,7 +193,7 @@ namespace Spot.DataLayer.Migrations
                     b.ToTable("SocialObject");
                 });
 
-            modelBuilder.Entity("Spot.DataLayer.Models.User", b =>
+            modelBuilder.Entity("Spot.Data.Models.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -283,7 +283,7 @@ namespace Spot.DataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Spot.DataLayer.Models.User", null)
+                    b.HasOne("Spot.Data.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -292,7 +292,7 @@ namespace Spot.DataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Spot.DataLayer.Models.User", null)
+                    b.HasOne("Spot.Data.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -307,7 +307,7 @@ namespace Spot.DataLayer.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Spot.DataLayer.Models.User", null)
+                    b.HasOne("Spot.Data.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -316,25 +316,25 @@ namespace Spot.DataLayer.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Spot.DataLayer.Models.User", null)
+                    b.HasOne("Spot.Data.Models.User", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Spot.DataLayer.Models.SocialObject", b =>
+            modelBuilder.Entity("Spot.Data.Models.SocialObject", b =>
                 {
-                    b.HasOne("Spot.DataLayer.Models.User", null)
+                    b.HasOne("Spot.Data.Models.User", null)
                         .WithMany("FavoriteObjects")
                         .HasForeignKey("UserId");
 
-                    b.HasOne("Spot.DataLayer.Models.User", null)
+                    b.HasOne("Spot.Data.Models.User", null)
                         .WithMany("OwnObjects")
                         .HasForeignKey("UserId1");
                 });
 
-            modelBuilder.Entity("Spot.DataLayer.Models.User", b =>
+            modelBuilder.Entity("Spot.Data.Models.User", b =>
                 {
                     b.Navigation("FavoriteObjects");
 

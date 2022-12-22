@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "XjabY/QzX9n1faJtkxcy7lM79onq0Me4wKio77VsICmMMmqPbFRp1kNJMDzXyX0WNUJ0i/9E7MGESriEq+8htw==",
+  "dgSpecHash": "qkCsVaXm+kbFy+SS4zhkk66ovP/FF0RyyLx8TifKSLYIyKbWwWjggJKkUmCf1XWWYoEc47JOG4+mYknHZ/4v/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
+  "projectFilePath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Yuri\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\5.0.0\\microsoft.aspnetcore.authentication.google.5.0.0.nupkg.sha512",
     "C:\\Users\\Yuri\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.10\\microsoft.aspnetcore.cryptography.internal.5.0.10.nupkg.sha512",
     "C:\\Users\\Yuri\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.10\\microsoft.aspnetcore.cryptography.keyderivation.5.0.10.nupkg.sha512",
     "C:\\Users\\Yuri\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\5.0.10\\microsoft.aspnetcore.identity.entityframeworkcore.5.0.10.nupkg.sha512",

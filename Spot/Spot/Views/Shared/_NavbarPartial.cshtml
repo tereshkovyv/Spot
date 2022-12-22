@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Spot.Data.Models
 @using Spot.DataLayer.Models
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
@@ -14,9 +15,6 @@
             {
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="Application" asp-page="/Overview/Favorite">Избранное</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="Application" asp-page="/Overview/Own">Мои мероприятия</a>
                         </li>

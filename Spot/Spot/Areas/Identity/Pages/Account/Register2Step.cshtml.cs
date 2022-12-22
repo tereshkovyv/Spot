@@ -21,21 +21,11 @@ namespace Spot.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class Register2StepModel : PageModel
     {
-        private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
-        private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
 
-        public Register2StepModel(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager,
-            ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+        public Register2StepModel(UserManager<User> userManager)
         {
             _userManager = userManager;
-            _signInManager = signInManager;
-            _logger = logger;
-            _emailSender = emailSender;
         }
 
         [BindProperty]
@@ -46,7 +36,7 @@ namespace Spot.Areas.Identity.Pages.Account
         public class InputModel
         {
 
-            public User user { get; set; }
+            public User User { get; set; }
 
             [Required]
             [Display(Name = "Название организации")]
@@ -72,19 +62,13 @@ namespace Spot.Areas.Identity.Pages.Account
 
         public async Task OnGetAsync(string returnUrl)
         {
-            var user = await _userManager.GetUserAsync(User);
-            Console.WriteLine("OnGet");
-            Console.WriteLine($"Сейчас : {user.Email}");
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl)
         {
             var user = await _userManager.GetUserAsync(User);
-            Console.WriteLine("OnPost");
-            Console.WriteLine($"Сайчас юзер: {user.Email}");
             returnUrl ??= Url.Content("~/");
-            //_user = _userManager.FindByIdAsync(userId).Result;
-            //inf = _user.Email;
+
             if (ModelState.IsValid)
             {
                 user.OrganisationName = Input.OrganisationName;
@@ -95,8 +79,6 @@ namespace Spot.Areas.Identity.Pages.Account
                 await _userManager.UpdateAsync(user);
                 return LocalRedirect(returnUrl);
             }
-
-            // If we got this far, something failed, redisplay form
             return Page();
         }
     }

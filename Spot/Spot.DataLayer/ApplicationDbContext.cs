@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Spot.Data.Models;
 using Spot.DataLayer.Models;
 
-namespace Spot.DataLayer
+namespace Spot.Data
 {
     public class ApplicationDbContext : IdentityDbContext<User>
     {

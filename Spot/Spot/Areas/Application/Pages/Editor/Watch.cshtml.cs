@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Spot.Data.Models;
 using Spot.DataLayer.Interfaces;
 using Spot.DataLayer.Models;
 

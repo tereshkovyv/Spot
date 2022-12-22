@@ -8,29 +8,31 @@
 <h1>@ViewData["Title"]</h1>
 <div class="row mt-5 mb-2">
     @{
-        var socialObjects = Model.socialObjects;
-        foreach (var socialObject in Model.socialObjects)
-            {
-                Dictionary<string, string> dict = new Dictionary<string, string>();
-                dict["socialObjectId"] = socialObject.Id.ToString();
+        foreach (var socialObject in Model.SocialObjects)
+        {
+            Dictionary<string, string> dataToPostRequest = new Dictionary<string, string>();
+            dataToPostRequest["socialObjectId"] = socialObject.Id.ToString();
 
-                var presenter = Model.UserManager.FindByIdAsync(socialObject.PresenterId).Result;
+            var presenter = Model.UserManager.FindByIdAsync(socialObject.PresenterId).Result;
 
-                <div class="p-1 mb-4 bg-light rounded-3 w-100 border rounded">
-                    <div class="container-fluid">
-                        <h3 class="display-5 fw-bold">@socialObject.Name</h3>
-                        <p><strong>@socialObject.Date.ToString("dd.MM HH:mm") - через @((socialObject.Date - DateTime.Now).ToString("dd")) дней</strong></p>
+            <div class="p-1 mb-4 bg-light rounded-3 w-100 border border-5 rounded">
+                <div class="container-fluid">
+                    <h2 class="display-5 fw-bold">@socialObject.Name</h2>
+                     <p><strong>@socialObject.Date.ToString("dd.MM HH:mm")</strong> - через @((socialObject.Date - DateTime.Now).ToString("dd")) дней</p>
+                    <hr/>
+                    <div class="border rounded bg-white">
                         <p>@socialObject.ShirtDescription</p>
-                        <p><strong>Предоставил:</strong> @presenter.OrganisationName</p>
-                        <p><strong>Статус:</strong> @socialObject.Status</p>
-                        <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Watch" asp-all-route-data="dict">Подробнее</a>
-                        <form action="" method="post">
-                            <input hidden="hidden" name="id" id="id" value="@socialObject.Id"/>
-                            <button type="submit">В избранное</button>
-                        </form>
+                    </div>
+                    <div class="d-flex justify-content-between">
+                        <div class="border rounded bg-white w-25">
+                            <p>@presenter.OrganisationName</p>
+                        </div>
+                        <div class="btn btn-primary float-right">
+                            <a class="nav-link text-dark" asp-area="Application" asp-page="/Editor/Watch" asp-all-route-data="dataToPostRequest">Подробнее</a>
+                        </div>
                     </div>
                 </div>
-            }
+            </div>
         }
     }
 </div>

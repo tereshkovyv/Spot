@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj": {}
+    "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj": {
+    "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
         "projectName": "Spot.DataLayer",
-        "projectPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
+        "projectPath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\Spot.DataLayer.csproj",
         "packagesPath": "C:\\Users\\Yuri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yuri\\Documents\\GitHub\\Spot\\Spot\\Spot.DataLayer\\obj\\",
+        "outputPath": "C:\\Users\\Yuri\\Desktop\\Spot-main\\Spot-main\\Spot\\Spot.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Yuri\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[5.0.10, )"
@@ -60,6 +64,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

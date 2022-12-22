@@ -11,11 +11,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Spot.DataLayer;
+using Spot.Data;
+using Spot.Data.Models;
 using Spot.DataLayer.Interfaces;
 using Spot.DataLayer.Models;
 using Spot.DataLayer.Repositories;
-using Spot.DataLayer;
+using Spot.DataLayer.Services;
 
 namespace Spot
 {
@@ -31,11 +32,17 @@ namespace Spot
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddTransient<IGettable<SocialObject>, SocialObjectRepository>();
-                //services.AddTransient<IAddable<SocialObject>, SocialObjectRepository>();
-            services.AddTransient<ISocialObjectRepository, SocialObjectRepository>();
+            services.AddAuthentication().AddGoogle(googleOptions =>
+            {
+                googleOptions.ClientId = Configuration["Google:ClientId"];
+                googleOptions.ClientSecret = Configuration["Google:ClientSecret"];
+            });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddTransient<ISocialObjectRepository, SocialObjectRepository>();
+            services.AddTransient<IGettable<SocialObject>, SocialObjectRepository>();
+            services.AddTransient<IChangeable<SocialObject>, SocialObjectRepository>();
+            services.AddTransient<IAddable<SocialObject>, SocialObjectRepository>();
+                services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
@@ -52,7 +59,7 @@ namespace Spot
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            if (!env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseMigrationsEndPoint();
@@ -60,7 +67,6 @@ namespace Spot
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

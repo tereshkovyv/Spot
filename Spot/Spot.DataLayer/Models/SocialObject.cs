@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace Spot.DataLayer.Models
+namespace Spot.Data.Models
 {
     public class SocialObject
     {

@@ -8,19 +8,5 @@
       <jdbc-url>jdbc:sqlite:C:\Users\Yuri\RiderProjects\Spot\Spot\app.db</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="app [2]" uuid="3bca03e5-e06b-42c9-a127-800e3ff8ff1f">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\app.db</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
-    <data-source source="LOCAL" name="app [3]" uuid="4c7b7eba-39cf-4c25-a330-0ea11dcaee60">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\app.db</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>
