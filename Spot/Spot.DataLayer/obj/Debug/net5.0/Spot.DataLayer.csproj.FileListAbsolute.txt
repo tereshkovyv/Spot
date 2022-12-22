@@ -11,7 +11,6 @@ C:\Users\Yuri\Desktop\Spot-main\Spot-main\Spot\Spot.DataLayer\obj\Debug\net5.0\S
 C:\Users\Yuri\Desktop\Spot-main\Spot-main\Spot\Spot.DataLayer\obj\Debug\net5.0\ref\Spot.DataLayer.dll
 C:\Users\Yuri\Desktop\Spot-main\Spot-main\Spot\Spot.DataLayer\obj\Debug\net5.0\Spot.DataLayer.pdb
 C:\Users\Yuri\Desktop\Spot-main\Spot-main\Spot\Spot.DataLayer\bin\Debug\net5.0\app.db
-C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\bin\Debug\net5.0\app.db
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\bin\Debug\net5.0\Spot.DataLayer.deps.json
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\bin\Debug\net5.0\Spot.DataLayer.dll
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\bin\Debug\net5.0\ref\Spot.DataLayer.dll
@@ -24,3 +23,4 @@ C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\obj\Debug\net5.0\Spot.Da
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\obj\Debug\net5.0\Spot.DataLayer.dll
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\obj\Debug\net5.0\ref\Spot.DataLayer.dll
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\obj\Debug\net5.0\Spot.DataLayer.pdb
+C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot.DataLayer\bin\Debug\net5.0\app.db

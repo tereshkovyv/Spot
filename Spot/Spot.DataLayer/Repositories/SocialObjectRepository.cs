@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using Spot.Data;
 using Spot.Data.Models;
+using Spot.DataLayer.Exceptions;
 using Spot.DataLayer.Interfaces;
 using Spot.DataLayer.Models;
 
@@ -10,46 +12,41 @@ namespace Spot.DataLayer.Repositories
 {
     public class SocialObjectRepository : ISocialObjectRepository
     {
-        private int RetryAttempts { get; set; }
         private readonly ApplicationDbContext _applicationDbContext;
-        
-        public SocialObjectRepository(ApplicationDbContext applicationDbContext)
-        {
-            _applicationDbContext = applicationDbContext;
-        }
-        
-        public IEnumerable<SocialObject> All
-        {
-            get
-            {
-                try
-                {
-                    return _applicationDbContext.SocialObject;
-                }
-                catch
-                {
-                    RetryAttempts += 1;
-                    if (RetryAttempts <= 3)
-                        return All;
-                    throw new DataException();
-                }
-            }
-        }
 
+        public SocialObjectRepository(ApplicationDbContext applicationDbContext)
+            =>
+                _applicationDbContext = applicationDbContext;
 
         public SocialObject? GetByIdOrNull(int id)
         {
             try
             {
-                return _applicationDbContext.SocialObject.FirstOrDefault(s => s.Id == id);
+                return Try(() => _applicationDbContext.SocialObject.FirstOrDefault(s => s.Id == id));
             }
             catch
             {
-                RetryAttempts += 1;
-                if (RetryAttempts <= 3)
-                    return GetByIdOrNull(id);
-                throw new DataException();
+                return null;
             }
+        }
+
+        public IEnumerable<SocialObject> All
+            => Try(() => _applicationDbContext.SocialObject);
+        
+        private static T Try<T>(Func<T> func)
+        {
+            var attempts = 0;
+            while(attempts <= 3)
+                try
+                {
+                    return func();
+                }
+                catch
+                {
+                    attempts++;
+                }
+
+            throw new DataBaseException();
         }
 
         public void Add(SocialObject objectToAdd)

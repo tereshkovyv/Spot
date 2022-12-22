@@ -417,7 +417,6 @@ C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.RazorAssembl
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.dll
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\ref\Spot.dll
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.pdb
-C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\bin\Debug\net5.0\app.db
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\bin\Debug\net5.0\appsettings.json
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\bin\Debug\net5.0\Spot.StaticWebAssets.xml
@@ -613,3 +612,4 @@ C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.RazorTargetA
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.Views.pdb
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.csproj.CopyComplete
 C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\obj\Debug\net5.0\Spot.genruntimeconfig.cache
+C:\Users\Yuri\Documents\GitHub\Spot\Spot\Spot\bin\Debug\net5.0\app.db

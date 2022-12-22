@@ -16,6 +16,7 @@ using Spot.Data.Models;
 using Spot.DataLayer.Interfaces;
 using Spot.DataLayer.Models;
 using Spot.DataLayer.Repositories;
+using Spot.Extensions;
 
 namespace Spot
 {
@@ -37,10 +38,8 @@ namespace Spot
                 googleOptions.ClientSecret = Configuration["Google:ClientSecret"];
             });
 
-            services.AddTransient<ISocialObjectRepository, SocialObjectRepository>();
-            services.AddTransient<IGettable<SocialObject>, SocialObjectRepository>();
-            services.AddTransient<IChangeable<SocialObject>, SocialObjectRepository>();
-            services.AddTransient<IAddable<SocialObject>, SocialObjectRepository>();
+            services.AddDataBaseRepository();
+            
                 services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(
                     Configuration.GetConnectionString("DefaultConnection")));
