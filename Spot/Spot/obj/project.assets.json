@@ -2330,10 +2330,7 @@
         },
         "runtime": {
           "bin/placeholder/Spot.DataLayer.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
